@@ -13,7 +13,8 @@
   },
   "dependencies": {
     "node-ssh": "latest",
-    "string_score": "latest"
+    "string_score": "latest",
+    "a-promise": "latest"
   },
   "repository": "https://github.com/steelbrain/atom-hack"
 }
