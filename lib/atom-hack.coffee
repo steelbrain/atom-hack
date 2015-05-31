@@ -12,7 +12,10 @@ lintHack = (ActiveEditor) ->
     Process.on 'close', ->
       try
         Content = JSON.parse(Data.join(''))
-      catch error then return # Ignore weird errors for now
+      catch error
+        # Ignore weird errors for now
+        # We still need to return an array so the transformer doesn't crash
+        return []
       return Resolve([]) if Content.passed
       Resolve(Content.errors)
 
