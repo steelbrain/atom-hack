@@ -38,6 +38,7 @@ module.exports = (Main)->
         else
           LePromise = Promise.resolve()
         LePromise.then =>
+          @SSH.exec('touch ' + RemotePath)
           @SSH.exec(command+' '+args.join(' '),{cwd:RemotePath.split('/').slice(0,-1).join('/')}).then (result)->
             resolve(result)
     @execLocal:(args,input,path)->
